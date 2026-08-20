@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Himalayan Trails India | Comprehensive Trek Guides & Planners</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover and plan top Himalayan treks across India including Hampta Pass, Kedarkantha, Roopkund, Chadar Trek, Valley of Flowers, and Goechala with complete itineraries and cost models.">
+    <meta name="keywords" content="India trekking, Hampta Pass, Kedarkantha, Roopkund, Chadar trek, Valley of Flowers, Goechala trek, Himalayan trek itinerary">
+
+    <!-- Google Fonts Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #0b677a;
+            --primary-dark: #084957;
+            --accent-color: #ff6612;
+            --secondary-teal: #48a9a6;
+            --text-dark: #2c3e50;
+            --text-muted: #64748b;
+            --bg-light: #f4f8fa;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #0f2733;
+            color: #d1d5db;
+            font-size: 0.85rem;
+            padding: 6px 0;
+        }
+        .top-bar a {
+            color: #d1d5db;
+            text-decoration: none;
+        }
+        .top-bar a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Navigation */
+        .navbar-main {
+            background: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--primary-color) !important;
+            letter-spacing: -0.5px;
+            cursor: pointer;
+        }
+        .navbar-brand span {
+            color: var(--accent-color);
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #374151 !important;
+            margin: 0 6px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        /* Buttons */
+        .btn-theme {
+            background-color: var(--accent-color);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 30px;
+            padding: 8px 24px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-theme:hover {
+            background-color: #e05509;
+            color: var(--white);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 102, 18, 0.3);
+        }
+
+        /* Hero Banners */
+        .hero-banner {
+            background: linear-gradient(rgba(13, 75, 97, 0.88), rgba(8, 73, 87, 0.82)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: var(--white);
+            padding: 70px 0 60px;
+        }
+        .hero-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 5px 16px;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Cards & Grids */
+        .trek-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .trek-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: var(--secondary-teal);
+        }
+        .trek-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .trek-card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-bottom: 4px solid var(--primary-color);
+            margin-bottom: 16px;
+        }
+        .stat-card i {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        .custom-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        .section-title h2 {
+            font-weight: 700;
+            font-size: 1.7rem;
+            color: #1a2a36;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 45px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+            margin-top: 6px;
+        }
+
+        /* Route Steps & Badges */
+        .route-step {
+            display: inline-block;
+            background: #eef7f9;
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin: 4px 2px;
+            font-size: 0.85rem;
+            border: 1px dashed var(--primary-color);
+        }
+        .route-arrow {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin: 0 4px;
+        }
+        .styled-table thead tr {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        .styled-table th, .styled-table td {
+            padding: 12px 14px;
+            font-size: 0.92rem;
+            vertical-align: middle;
+        }
+
+        /* Filter Tabs */
+        .filter-btn.active {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+        }
+
+        /* ========================================================================= */
+        /* FLOATING SIDEBAR ACTION BUTTONS (BOTTOM RIGHT CORNER EXACT AS IN IMAGE) */
+        /* ========================================================================= */
+        .floating-action-bar {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 1040;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .float-action-btn {
+            width: 52px;
+            height: 52px;
+            background-color: #fff9f9;
+            border: 1.5px solid #ffe3e3;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .float-action-btn:hover {
+            transform: scale(1.08) translateX(-3px);
+            background-color: #ffffff;
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+        }
+
+        .float-action-btn i {
+            font-size: 1.35rem;
+            transition: transform 0.2s ease;
+        }
+
+        /* Heart Icon */
+        .float-action-btn.btn-wishlist i {
+            color: #8c93a3;
+        }
+        .float-action-btn.btn-wishlist.active i,
+        .float-action-btn.btn-wishlist:hover i {
+            color: #ef4444;
+        }
+
+        /* Share Icon (Red) */
+        .float-action-btn.btn-share i {
+            color: #e53935;
+        }
+
+        /* Phone Icon (Blue) */
+        .float-action-btn.btn-call i {
+            color: #1e88e5;
+        }
+
+        /* WhatsApp Icon (Green) */
+        .float-action-btn.btn-wa i {
+            color: #25d366;
+            font-size: 1.5rem;
+        }
+
+        /* Tooltip hint on hover */
+        .float-action-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 64px;
+            background-color: #1e293b;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateX(6px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .float-action-btn:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Share Options Modal Item */
+        .share-platform-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 10px;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #334155;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            height: 100%;
+        }
+        .share-platform-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            color: #0f172a;
+        }
+        .share-platform-btn i {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+        }
+        .share-platform-btn.wa i { color: #25D366; }
+        .share-platform-btn.fb i { color: #1877F2; }
+        .share-platform-btn.tw i { color: #000000; }
+        .share-platform-btn.tg i { color: #229ED9; }
+        .share-platform-btn.li i { color: #0A66C2; }
+        .share-platform-btn.em i { color: #EA4335; }
+
+        /* Toast notification */
+        #shareToast {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2100;
+            background-color: #0b677a;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111d24;
+            color: #cbd5e1;
+            padding: 50px 0 20px;
+        }
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: var(--white);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================================================= -->
+    <!-- FLOATING ACTION SIDEBAR (BOTTOM RIGHT CORNER) -->
+    <!-- ========================================================================= -->
+    <div class="floating-action-bar">
+       
+     
+
+        <!-- 2. Share Button (Opens Destination Options Modal) -->
+        <button class="float-action-btn btn-share" data-tooltip="Share This Website" onclick="openShareModal()">
+            <i class="fa-solid fa-share-nodes"></i>
+        </button>
+        <!-- 4. Direct WhatsApp (+91 9371040623) -->
+        <a href="https://api.whatsapp.com/send?phone=919371040623&text=Hello%21%20I%20am%20interested%20in%20booking%20a%20Himalayan%20trek.%20Please%20guide%20me." target="_blank" class="float-action-btn btn-wa" data-tooltip="WhatsApp +91 9371040623">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <!-- 3. Direct Phone Call (+91 9371040623) -->
+        <a href="tel:+919371040623" class="float-action-btn btn-call" data-tooltip="Call +91 9371040623">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+
+        
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="shareToast">
+        <i class="fa fa-circle-check me-2 text-warning"></i> <span id="toastMsg">Link copied to clipboard!</span>
+    </div>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <span class="me-3"><a href="tel:+919371040623"><i class="fa fa-phone me-1 text-warning"></i> +91 9371040623</a></span>
+                <span><a href="mailto:parthmahakalkar14@gmail.com"><i class="fa fa-envelope me-1 text-warning"></i> parthmahakalkar14@gmail.com</a></span>
+            </div>
+            <div>
+                <span class="badge bg-warning text-dark me-2">Verified 2026 Himalayan Schedules</span>
+                <a href="javascript:void(0)" onclick="showListingPage()">Explore All Treks</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-main">
+        <div class="container">
+            <a class="navbar-brand" onclick="showListingPage()">
+                <i class="fa-solid fa-mountain-sun me-2"></i>TREK<span>INDIA</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" onclick="showListingPage()">All Treks</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="loadTrekDetail('hampta-pass')">Hampta Pass</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="loadTrekDetail('kedarkantha')">Kedarkantha</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="loadTrekDetail('roopkund')">Roopkund</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="loadTrekDetail('chadar')">Chadar Zanskar</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                            <i class="fa-solid fa-paper-plane me-1"></i> Get Trek Quote
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 1: TREK CATALOG / LISTING PAGE (DEFAULT) -->
+    <!-- ========================================================================= -->
+    <div id="listingView">
+        <!-- Hero Section -->
+        <section class="hero-banner text-center">
+            <div class="container">
+                <span class="hero-badge"><i class="fa fa-compass me-1"></i> Certified Himalayan Expeditions</span>
+                <h1 class="display-5 fw-bold mb-3">Discover the Greatest Treks in India</h1>
+                <p class="lead mx-auto mb-4" style="max-width: 780px;">
+                    Explore vetted trails, detailed door-to-door transit plans, altitude profiles, and transparent group budgets across Himachal, Uttarakhand, Ladakh, and Sikkim.
+                </p>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <button class="btn btn-sm btn-outline-light filter-btn active rounded-pill px-3" onclick="filterTreks('all')">All Regions</button>
+                    <button class="btn btn-sm btn-outline-light filter-btn rounded-pill px-3" onclick="filterTreks('himachal')">Himachal Pradesh</button>
+                    <button class="btn btn-sm btn-outline-light filter-btn rounded-pill px-3" onclick="filterTreks('uttarakhand')">Uttarakhand</button>
+                    <button class="btn btn-sm btn-outline-light filter-btn rounded-pill px-3" onclick="filterTreks('ladakh')">Ladakh</button>
+                    <button class="btn btn-sm btn-outline-light filter-btn rounded-pill px-3" onclick="filterTreks('sikkim')">Sikkim</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trek Directory Grid -->
+        <main class="container my-5">
+            <div class="section-title">
+                <h2>Featured Indian Treks</h2>
+                <p class="text-muted">Select any trek below to open its dedicated itinerary, route maps, and group budget guide</p>
+            </div>
+
+            <div class="row g-4" id="trekGridContainer">
+                <!-- Cards populated dynamically -->
+            </div>
+        </main>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- VIEW 2: DYNAMIC INDIVIDUAL TREK DETAIL PAGE (ITINERARY & PLANNER) -->
+    <!-- ========================================================================= -->
+    <div id="detailView" style="display: none;">
+        <!-- Dynamic Detail Hero -->
+        <section class="hero-banner" id="detailHero">
+            <div class="container text-center">
+                <div class="mb-3">
+                    <button class="btn btn-sm btn-outline-light rounded-pill px-3" onclick="showListingPage()">
+                        <i class="fa fa-arrow-left me-1"></i> Back to All Treks
+                    </button>
+                </div>
+                <span class="hero-badge" id="detailBadge">7-Day Expedition</span>
+                <h1 class="display-5 fw-bold mb-2" id="detailTitle">Trek Title</h1>
+                <p class="lead mx-auto mb-4" id="detailSubtitle" style="max-width: 780px;">Trek description</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="#itinerarySec" class="btn btn-theme"><i class="fa fa-calendar-days me-1"></i> Day-by-Day Plan</a>
+                    <button class="btn btn-outline-light rounded-pill px-4 fw-semibold" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                        <i class="fa fa-envelope me-1"></i> Book Group Slot
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Ribbon -->
+        <div class="container mt-n4" style="margin-top: -30px; position: relative; z-index: 10;">
+            <div class="row g-3" id="detailStatsRow">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+
+        <!-- Detail Main Content Container -->
+        <main class="container my-5">
+            <!-- Advisory -->
+            <div class="alert alert-warning border-start border-4 border-warning shadow-sm mb-4" id="detailAdvisory">
+                <!-- Injected via JS -->
+            </div>
+
+            <!-- Route Breadcrumbs -->
+            <section class="custom-card">
+                <div class="section-title">
+                    <h2>Expedition Route Map</h2>
+                    <p class="text-muted">Trail progression and elevation milestones</p>
+                </div>
+                <div class="p-3 bg-light rounded-3 border" id="detailRouteSteps">
+                    <!-- Injected via JS -->
+                </div>
+            </section>
+
+            <!-- Highlights -->
+            <section class="custom-card">
+                <div class="section-title">
+                    <h2>Key Trek Highlights</h2>
+                    <p class="text-muted">What makes this Himalayan journey iconic</p>
+                </div>
+                <div class="row g-3" id="detailHighlightsRow">
+                    <!-- Injected via JS -->
+                </div>
+            </section>
+
+            <!-- Itinerary Table -->
+            <section class="custom-card" id="itinerarySec">
+                <div class="section-title">
+                    <h2>Detailed Itinerary</h2>
+                    <p class="text-muted">Day-by-day transit, acclimatization, and trail stages</p>
+                </div>
+                <div class="table-responsive">
+                    <table class="table styled-table table-bordered mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width: 12%;">Day</th>
+                                <th style="width: 33%;">Route Segment</th>
+                                <th style="width: 38%;">Activity & Altitude</th>
+                                <th style="width: 17%;">Est. Daily Expense</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailItineraryBody">
+                            <!-- Injected via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Group Budget Model -->
+            <section class="custom-card" id="budgetSec">
+                <div class="section-title">
+                    <h2>Group Cost & Budget Model</h2>
+                    <p class="text-muted">Estimated breakdown for standard 6-person group expeditions</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="table-responsive">
+                            <table class="table styled-table table-striped border mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Expense Head</th>
+                                        <th>Per Person</th>
+                                        <th>6-Person Group Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="detailBudgetBody">
+                                    <!-- Injected via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="card border-0 bg-primary text-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <span class="badge bg-warning text-dark mb-2">Target Budget</span>
+                                <h3 class="fw-bold mb-1" id="detailBudgetPerPerson">₹33,200</h3>
+                                <p class="text-white-50 small mb-3">Estimated all-inclusive total per person</p>
+                                <hr class="border-white-50">
+                                <ul class="list-unstyled small mb-4" id="detailBudgetFeatures">
+                                    <!-- Injected via JS -->
+                                </ul>
+                            </div>
+                            <button class="btn btn-warning w-100 fw-bold py-2 text-dark rounded-pill" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                                Inquire Group Package
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="custom-card">
+                <div class="section-title">
+                    <h2>Essential Trek Guidance & FAQs</h2>
+                    <p class="text-muted">Preparation, seasonal fitness, and logistics</p>
+                </div>
+                <div class="accordion" id="detailFaqAccordion">
+                    <!-- Injected via JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SHARE DESTINATION PICKER MODAL -->
+    <!-- ========================================================================= -->
+    <div class="modal fade" id="sharePickerModal" tabindex="-1" aria-labelledby="sharePickerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold" id="sharePickerModalLabel"><i class="fa-solid fa-share-nodes text-warning me-2"></i>Share Trek Destination</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted small text-center mb-4">Choose where you would like to share this trek guide with your travel buddies:</p>
+                    
+                    <div class="row g-3 mb-4">
+                        <div class="col-4">
+                            <a href="#" id="shareWaBtn" target="_blank" class="share-platform-btn wa">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span class="small fw-semibold">WhatsApp</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="#" id="shareFbBtn" target="_blank" class="share-platform-btn fb">
+                                <i class="fa-brands fa-facebook"></i>
+                                <span class="small fw-semibold">Facebook</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="#" id="shareTwBtn" target="_blank" class="share-platform-btn tw">
+                                <i class="fa-brands fa-x-twitter"></i>
+                                <span class="small fw-semibold">X (Twitter)</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="#" id="shareTgBtn" target="_blank" class="share-platform-btn tg">
+                                <i class="fa-brands fa-telegram"></i>
+                                <span class="small fw-semibold">Telegram</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="#" id="shareLiBtn" target="_blank" class="share-platform-btn li">
+                                <i class="fa-brands fa-linkedin"></i>
+                                <span class="small fw-semibold">LinkedIn</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="#" id="shareEmBtn" target="_blank" class="share-platform-btn em">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span class="small fw-semibold">Email</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="border rounded-3 p-2 bg-light d-flex align-items-center justify-content-between">
+                        <input type="text" id="shareUrlInput" class="form-control form-control-sm border-0 bg-transparent" readonly>
+                        <button class="btn btn-sm btn-primary rounded-pill px-3 ms-2 fw-semibold" onclick="copyCurrentLink()">
+                            <i class="fa-regular fa-copy me-1"></i> Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Universal Quote Modal Form -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold" id="quoteModalLabel"><i class="fa fa-envelope-open-text me-2"></i>Request Custom Trek Quote</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="trekInquiryForm" onsubmit="handleFormSubmission(event)">
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Selected Trek *</label>
+                            <input type="text" class="form-control" id="modalTrekField" name="Selected_Trek" value="Hampta Pass Trek" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Full Name *</label>
+                            <input type="text" class="form-control" id="modalFullName" name="Full_Name" placeholder="Your full name" required>
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold">Email ID *</label>
+                                <input type="email" class="form-control" id="modalEmail" name="Email" placeholder="name@example.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold">WhatsApp / Phone *</label>
+                                <input type="tel" class="form-control" id="modalPhone" name="Phone" placeholder="+91 98765 43210" required>
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold">No. of Trekkers</label>
+                                <input type="number" class="form-control" id="modalTrekkers" name="No_Of_Trekkers" value="6" min="1">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold">Departure City</label>
+                                <input type="text" class="form-control" id="modalDepartureCity" name="Departure_City" placeholder="e.g. Nagpur / Delhi / Mumbai">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Proposed Travel Month</label>
+                            <select class="form-select" id="modalMonth" name="Travel_Month">
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December - Winter Trek">December - Winter Trek</option>
+                                <option value="January - Chadar / Snow">January - Chadar / Snow</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Special Requirements / Notes</label>
+                            <textarea class="form-control" id="modalNotes" name="Notes" rows="2" placeholder="Dietary restrictions, gear requirements, flight booking..."></textarea>
+                        </div>
+
+                        <div class="alert alert-light border small text-muted p-2 mb-3">
+                            <i class="fa fa-circle-check text-success me-1"></i> Submitting will automatically forward your inquiry to our email and open your <strong>WhatsApp</strong>.
+                        </div>
+
+                        <button type="submit" class="btn btn-theme w-100 py-2">
+                            <i class="fa-brands fa-whatsapp me-2"></i> Submit & Chat on WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white fw-bold mb-3"><i class="fa-solid fa-mountain-sun text-warning me-2"></i>TrekIndia Expedition Desk</h5>
+                    <p class="small text-secondary">
+                        Comprehensive travel intelligence, door-to-door transit guides, safety buffers, and group budget models for the Indian Himalayas.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="text-white fw-semibold mb-3">Popular Treks</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="javascript:void(0)" onclick="loadTrekDetail('hampta-pass')">Hampta Pass</a></li>
+                        <li class="mb-2"><a href="javascript:void(0)" onclick="loadTrekDetail('kedarkantha')">Kedarkantha</a></li>
+                        <li class="mb-2"><a href="javascript:void(0)" onclick="loadTrekDetail('roopkund')">Roopkund Trail</a></li>
+                        <li class="mb-2"><a href="javascript:void(0)" onclick="loadTrekDetail('chadar')">Chadar Zanskar</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-white fw-semibold mb-3">Expedition Desk</h6>
+                    <ul class="list-unstyled small text-secondary">
+                        <li class="mb-2"><i class="fa fa-location-dot me-2 text-warning"></i> Manali / Dehradun / Nagpur Desk</li>
+                        <li class="mb-2"><i class="fa fa-phone me-2 text-warning"></i> +91 9371040623</li>
+                        <li class="mb-2"><i class="fa fa-envelope me-2 text-warning"></i> parthmahakalkar14@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-white fw-semibold mb-3">Follow Updates</h6>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center text-secondary mt-4 pt-3 border-top border-secondary">
+                <p class="mb-0">© 2026 Himalayan Trails India & Trek Planner. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Comprehensive Trek Data & View Routing Script -->
+    <script>
+        const treksData = {
+            "hampta-pass": {
+                id: "hampta-pass",
+                region: "himachal",
+                regionName: "Himachal Pradesh",
+                title: "Hampta Pass & Chandratal Lake",
+                badge: "7-Day Door-to-Door (Nagpur / Delhi Hub)",
+                subtitle: "Dramatic crossover trek from the lush green pine forests of Kullu to the stark barren mountains of Spiti Valley.",
+                image: "https://cdn.trekthehimalayas.com/images/HamptaPassTrek/GalleryDesktop/Monsoon/de7285e6-2bc5-4ff7-bb60-e72b01cbadbb_Hampta-Pass-3.webp",
+                duration: "7 Days Door-to-Door",
+                altitude: "14,100 Ft",
+                distance: "26 KM",
+                difficulty: "Moderate",
+                estCost: "₹33,200 / person",
+                advisory: "<strong>Reality Check:</strong> A strict 5-day round trip from central India is unsafe. Acclimatization and high-mountain weather buffers require a realistic 7-day door-to-door travel plan.",
+                route: ["Nagpur / Delhi", "Manali", "Jobra", "Chika", "Balu Ka Ghera", "Hampta Pass (14,100 ft)", "Shea Goru", "Chatru", "Chandratal", "Manali", "Return"],
+                highlights: [
+                    { title: "Kullu to Spiti Transition", desc: "Watch alpine pine forests turn into raw desert scree in a single day." },
+                    { title: "14,100 ft Summit Pass", desc: "Panoramic view of Indrasan Peak and massive glacier ridges." },
+                    { title: "Chandratal Crescent Lake", desc: "Camp close to the high altitude turquoise lake in Spiti Valley." }
+                ],
+                itinerary: [
+                    { day: "Day 1", route: "Transit ➔ Manali", desc: "Flight/Train to Delhi/Chandigarh, overnight Volvo to Manali.", cost: "₹7,500 – ₹10,000" },
+                    { day: "Day 2", route: "Manali ➔ Jobra ➔ Chika", desc: "Drive to Jobra; 2–3 km gentle trek to Chika campsite (9,800 ft).", cost: "₹1,500 – ₹2,000" },
+                    { day: "Day 3", route: "Chika ➔ Balu Ka Ghera", desc: "7–9 km trek through alpine river crossings and boulders (11,900 ft).", cost: "₹1,500 – ₹2,000" },
+                    { day: "Day 4", route: "Balu Ka Ghera ➔ Hampta Pass ➔ Shea Goru", desc: "Pass day. Climb to 14,100 ft summit; steep descent to Shea Goru (12,900 ft).", cost: "₹1,500 – ₹2,000" },
+                    { day: "Day 5", route: "Shea Goru ➔ Chatru ➔ Chandratal", desc: "Cross river; trek 5 km to Chatru. Excursion drive to Chandratal lake.", cost: "₹2,000 – ₹3,000" },
+                    { day: "Day 6", route: "Chatru ➔ Manali ➔ Return Bus", desc: "Drive to Manali via Atal Tunnel; evening return coach.", cost: "₹7,000 – ₹10,000" },
+                    { day: "Day 7", route: "Buffer / Contingency Day", desc: "Essential road & weather buffer for safe mountain logistics.", cost: "₹1,000 – ₹2,000" }
+                ],
+                budgetRows: [
+                    { item: "Nagpur ↔ Delhi/Chandigarh Flights", perPerson: "₹13,500", group: "₹81,000" },
+                    { item: "Delhi/Chandigarh ↔ Manali AC Volvo", perPerson: "₹3,000", group: "₹18,000" },
+                    { item: "5-Day Hampta Pass Guided Package", perPerson: "₹10,000", group: "₹60,000" },
+                    { item: "Manali Hotel Stay (Shared 1–2 nights)", perPerson: "₹1,200", group: "₹7,200" },
+                    { item: "Meals Outside Trekking Days", perPerson: "₹2,500", group: "₹15,000" },
+                    { item: "Local Transfers / Cabs / Autos", perPerson: "₹1,000", group: "₹6,000" },
+                    { item: "Contingency / Safety Reserve", perPerson: "₹2,000", group: "₹12,000" }
+                ],
+                totalPerPerson: "₹33,200",
+                features: ["Includes all roundtrip flights + Volvo", "Includes 5-day licensed camp & meal gear", "Group discount calculated for 6 pax"],
+                faqs: [
+                    { q: "What is the best season for Hampta Pass?", a: "Mid-June to mid-October. June offers snow crossings, while August and September feature lush alpine flora." },
+                    { q: "Is it suitable for beginners?", a: "Yes, provided you have good cardiovascular endurance and prepare 3–4 weeks before departure." }
+                ]
+            },
+            "kedarkantha": {
+                id: "kedarkantha",
+                region: "uttarakhand",
+                regionName: "Uttarakhand",
+                title: "Kedarkantha Peak Winter Trek",
+                badge: "6-Day Snow Peak Trail",
+                subtitle: "India's premier winter summit trek offering dramatic 360-degree views of the Garhwal Himalayas from 12,500 ft.",
+                image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+                duration: "6 Days Total",
+                altitude: "12,500 Ft",
+                distance: "20 KM",
+                difficulty: "Easy to Moderate",
+                estCost: "₹24,500 / person",
+                advisory: "<strong>Winter Note:</strong> Night temperatures between December and February can drop to -10°C. Quality thermal innerwear and microspikes are mandatory.",
+                route: ["Dehradun", "Sankri Base Village", "Juda Ka Talab", "Kedarkantha Base", "Kedarkantha Summit (12,500 ft)", "Hargaon", "Sankri", "Dehradun"],
+                highlights: [
+                    { title: "360° Himalayan Panorama", desc: "Summit view of Swargarohini, Black Peak, and Bandarpoonch ranges." },
+                    { title: "Frozen Juda Ka Talab", desc: "Camp beside a high-altitude alpine lake surrounded by pine forests." },
+                    { title: "Accessible Snow Summit", desc: "One of the few beginner-accessible true mountain summits in India." }
+                ],
+                itinerary: [
+                    { day: "Day 1", route: "Dehradun ➔ Sankri", desc: "Scenic 210 km drive through Mussoorie and Yamuna river valleys (6,400 ft).", cost: "₹1,200" },
+                    { day: "Day 2", route: "Sankri ➔ Juda Ka Talab", desc: "4 km trek through dense maple and pine forests (9,100 ft).", cost: "Included in package" },
+                    { day: "Day 3", route: "Juda Ka Talab ➔ Base Camp", desc: "3 km climb to Kedarkantha Base with open meadow camping (10,600 ft).", cost: "Included in package" },
+                    { day: "Day 4", route: "Base ➔ Summit ➔ Hargaon", desc: "Early 4 AM summit push to 12,500 ft; descend down to Hargaon camp.", cost: "Included in package" },
+                    { day: "Day 5", route: "Hargaon ➔ Sankri Base", desc: "6 km descent back to Sankri village; celebrate completion.", cost: "₹800" },
+                    { day: "Day 6", route: "Sankri ➔ Dehradun Return", desc: "Return drive to Dehradun railway station or airport.", cost: "₹1,200" }
+                ],
+                budgetRows: [
+                    { item: "Flights/Transit to Dehradun", perPerson: "₹11,000", group: "₹66,000" },
+                    { item: "5-Day Kedarkantha Package (Trek, Guide, Tents)", perPerson: "₹8,500", group: "₹51,000" },
+                    { item: "Dehradun ↔ Sankri Shared Bolero", perPerson: "₹2,400", group: "₹14,400" },
+                    { item: "Dehradun Stay (1 night)", perPerson: "₹1,000", group: "₹6,000" },
+                    { item: "Contingency & Gear Rentals", perPerson: "₹1,600", group: "₹9,600" }
+                ],
+                totalPerPerson: "₹24,500",
+                features: ["Guaranteed winter snow summit", "Camp beside frozen Juda Ka Talab", "Crampons and gaiters provided"],
+                faqs: [
+                    { q: "Which months have the most snow?", a: "Mid-December through late March has the deepest snow cover on the summit." },
+                    { q: "Is prior experience required?", a: "No, Kedarkantha is one of the most accessible beginner snow treks in Asia." }
+                ]
+            },
+            "roopkund": {
+                id: "roopkund",
+                region: "uttarakhand",
+                regionName: "Uttarakhand",
+                title: "Roopkund Mystery Lake Trek",
+                badge: "8-Day High Altitude Expedition",
+                subtitle: "Venture deep into the Nanda Devi sanctuary to the famous high-altitude glacial lake at 15,750 ft.",
+                image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+                duration: "8 Days Total",
+                altitude: "15,750 Ft",
+                distance: "53 KM",
+                difficulty: "Difficult",
+                estCost: "₹28,800 / person",
+                advisory: "<strong>High Altitude Warning:</strong> Strict acclimatization rules apply. Trekkers must maintain high hydration and carry Diamox under medical advice.",
+                route: ["Kathgodam", "Lohajung", "Didna Village", "Ali Bugyal", "Bedni Bugyal", "Bhagwabasa", "Roopkund (15,750 ft)", "Lohajung", "Kathgodam"],
+                highlights: [
+                    { title: "Grand Ali & Bedni Bugyals", desc: "Walk across Asia’s largest and most magnificent alpine meadow carpet." },
+                    { title: "Mount Trishul Up-close", desc: "Mesmerizing views of Mt. Trishul (7,120m) and Nanda Ghunti." },
+                    { title: "Glacial Mystery Lake", desc: "Reach the sacred and enigmatic skeletal lake nestled below Junargali." }
+                ],
+                itinerary: [
+                    { day: "Day 1", route: "Kathgodam ➔ Lohajung", desc: "210 km drive through Kumaon mountains to base village Lohajung.", cost: "₹1,500" },
+                    { day: "Day 2", route: "Lohajung ➔ Didna Village", desc: "8 km trek descending to Neel Ganga river and ascending Didna.", cost: "Included" },
+                    { day: "Day 3", route: "Didna ➔ Ali Bugyal", desc: "10 km ascent into the breathtaking vast rolling green meadows.", cost: "Included" },
+                    { day: "Day 4", route: "Ali Bugyal ➔ Ghora Lotani", desc: "Meadow ridge walk with expansive views of Mt. Trishul (12,800 ft).", cost: "Included" },
+                    { day: "Day 5", route: "Ghora Lotani ➔ Bhagwabasa", desc: "Rocky climb into cold stone landscapes at 14,100 ft.", cost: "Included" },
+                    { day: "Day 6", route: "Bhagwabasa ➔ Roopkund Summit", desc: "Challenging climb to 15,750 ft lake and Junargali ridge; return to Bedni.", cost: "Included" },
+                    { day: "Day 7", route: "Bedni Bugyal ➔ Wan ➔ Lohajung", desc: "10 km descent to roadhead and drive to Lohajung.", cost: "₹800" },
+                    { day: "Day 8", route: "Lohajung ➔ Kathgodam", desc: "Return drive to Kathgodam railway station.", cost: "₹1,500" }
+                ],
+                budgetRows: [
+                    { item: "Transit / Train / Flight to Kathgodam", perPerson: "₹10,500", group: "₹63,000" },
+                    { item: "7-Day Roopkund Guided Package", perPerson: "₹13,500", group: "₹81,000" },
+                    { item: "Kathgodam ↔ Lohajung Vehicle", perPerson: "₹2,800", group: "₹16,800" },
+                    { item: "Buffer & Gear Allocation", perPerson: "₹2,000", group: "₹12,000" }
+                ],
+                totalPerPerson: "₹28,800",
+                features: ["Asia's largest alpine meadows", "Highest camp at Bhagwabasa", "Full medical & oxygen kit accompanied"],
+                faqs: [
+                    { q: "How demanding is the trail?", a: "It is rated difficult due to long trekking hours above 12,000 ft and steep climbs." }
+                ]
+            },
+            "chadar": {
+                id: "chadar",
+                region: "ladakh",
+                regionName: "Ladakh",
+                title: "Chadar Frozen River Trek",
+                badge: "9-Day Extreme Winter Trail",
+                subtitle: "Walk over the frozen Zanskar river in sub-zero Himalayan conditions through towering vertical gorges.",
+                image: "https://himalayanhikers.in/root-admin-laravel-panel/uploads/trek_gallery/6911c36c3e97f.jpg",
+                duration: "9 Days Total",
+                altitude: "11,150 Ft",
+                distance: "60 KM",
+                difficulty: "Challenging",
+                estCost: "₹48,000 / person",
+                advisory: "<strong>Mandatory Acclimatization:</strong> Leh district administration requires a 48-hour mandatory stay in Leh town + medical clearance before entering the ice trail.",
+                route: ["Leh", "Shingra Koma", "Tibb Cave", "Nerak Waterfall (Frozen)", "Tibb", "Shingra Koma", "Leh"],
+                highlights: [
+                    { title: "Walk on Frozen Ice Sheet", desc: "Trek directly over sheets of blue and turquoise ice on the frozen Zanskar river." },
+                    { title: "Gigantic Frozen Waterfall", desc: "Stand in front of the colossal frozen ice fall at Nerak." },
+                    { title: "Canyon Gorge Formations", desc: "Towering rock faces hundreds of feet high flanking the narrow river." }
+                ],
+                itinerary: [
+                    { day: "Day 1-2", route: "Fly into Leh ➔ Acclimatization", desc: "Mandatory rest in Leh (11,400 ft) to adapt to oxygen levels.", cost: "₹5,000" },
+                    { day: "Day 3", route: "Medical Checkup in Leh", desc: "Official clearance at SNM Hospital for Chadar permit.", cost: "₹2,500" },
+                    { day: "Day 4", route: "Leh ➔ Shingra Koma ➔ Tsomo", desc: "Drive to roadhead; first walk on the ice sheet (Chadar).", cost: "Included" },
+                    { day: "Day 5", route: "Tsomo ➔ Tibb Cave", desc: "15 km trek along stunning natural caves and water springs.", cost: "Included" },
+                    { day: "Day 6", route: "Tibb ➔ Nerak Frozen Waterfall", desc: "Reach the iconic monumental Nerak waterfall frozen in time.", cost: "Included" },
+                    { day: "Day 7", route: "Nerak ➔ Tibb Return", desc: "Retrace steps over changing ice formations.", cost: "Included" },
+                    { day: "Day 8", route: "Tibb ➔ Shingra Koma ➔ Leh", desc: "Final ice trek and transfer by 4x4 back to Leh hotel.", cost: "Included" },
+                    { day: "Day 9", route: "Fly out from Leh", desc: "Return flights back to Delhi/Home.", cost: "₹9,000" }
+                ],
+                budgetRows: [
+                    { item: "Return Flights to Leh (Winter Fare)", perPerson: "₹18,000", group: "₹1,08,000" },
+                    { item: "Chadar Trek Operator Package & Porters", perPerson: "₹22,000", group: "₹1,32,000" },
+                    { item: "Wildlife & ALTOA Permit + Medical Fees", perPerson: "₹5,000", group: "₹30,000" },
+                    { item: "Leh Heating & Hotel (3 Nights)", perPerson: "₹3,000", group: "₹18,000" }
+                ],
+                totalPerPerson: "₹48,000",
+                features: ["Unmatched frozen river adventure", "Full local Zanskari guide team", "Extreme winter thermal camp setup"],
+                faqs: [
+                    { q: "When does Chadar take place?", a: "Only during deep winter from mid-January to mid-February when the river is solidly frozen." }
+                ]
+            },
+            "valley-of-flowers": {
+                id: "valley-of-flowers",
+                region: "uttarakhand",
+                regionName: "Uttarakhand",
+                title: "Valley of Flowers & Hemkund Sahib",
+                badge: "6-Day UNESCO Heritage Trail",
+                subtitle: "Trek into a fairytale carpet of millions of rare alpine flowers surrounded by snow peaks and holy lakes.",
+                image: "https://cdn.trekthehimalayas.com/images/ValleyofFlowersTrek/GalleryDesktop/Monsoon/96be3b4d-658d-4891-900f-4d974e4499d4_VOF-2.webp",
+                duration: "6 Days Total",
+                altitude: "14,400 Ft (Hemkund)",
+                distance: "38 KM",
+                difficulty: "Moderate",
+                estCost: "₹21,500 / person",
+                advisory: "<strong>Monsoon Bloom:</strong> The valley only blooms from July to early September. Trek with good waterproof rain ponchos and sturdy anti-skid boots.",
+                route: ["Rishikesh", "Govindghat", "Ghangaria", "Valley of Flowers", "Hemkund Sahib (14,400 ft)", "Govindghat", "Rishikesh"],
+                highlights: [
+                    { title: "UNESCO Floral Paradise", desc: "Over 500 varieties of wild flowers including Blue Poppy and Brahma Kamal." },
+                    { title: "Sacred Hemkund Sahib", desc: "Highest Gurudwara in the world located beside a high alpine glacial lake." },
+                    { title: "Pushpawati River Valley", desc: "Trek alongside roaring Himalayan streams and forested mountain ridges." }
+                ],
+                itinerary: [
+                    { day: "Day 1", route: "Rishikesh ➔ Govindghat", desc: "Drive along the holy Alaknanda river via Devprayag and Joshimath.", cost: "₹1,200" },
+                    { day: "Day 2", route: "Govindghat ➔ Ghangaria", desc: "10 km gradual trek along the river to base camp Ghangaria (9,800 ft).", cost: "Included" },
+                    { day: "Day 3", route: "Ghangaria ➔ Valley of Flowers", desc: "Explore the vast National Park floral meadows (11,500 ft); return to Ghangaria.", cost: "Included" },
+                    { day: "Day 4", route: "Ghangaria ➔ Hemkund Sahib", desc: "Steep climb to 14,400 ft sacred lake; hot tea at Gurudwara; descend back.", cost: "Included" },
+                    { day: "Day 5", route: "Ghangaria ➔ Govindghat", desc: "Descend 10 km back to roadhead.", cost: "Included" },
+                    { day: "Day 6", route: "Govindghat ➔ Rishikesh", desc: "Scenic return drive to Rishikesh for onward travel.", cost: "₹1,200" }
+                ],
+                budgetRows: [
+                    { item: "Transit to Rishikesh / Dehradun", perPerson: "₹8,500", group: "₹51,000" },
+                    { item: "All-inclusive Guided Trek Package", perPerson: "₹9,500", group: "₹57,000" },
+                    { item: "National Park Entry & Permits", perPerson: "₹1,000", group: "₹6,000" },
+                    { item: "Food & Personal Expenses", perPerson: "₹2,500", group: "₹15,000" }
+                ],
+                totalPerPerson: "₹21,500",
+                features: ["UNESCO World Heritage site", "Comfortable lodge stay in Ghangaria", "Scenic holy glacial lake visit"],
+                faqs: [
+                    { q: "What is the peak flowering time?", a: "Late July to mid-August offers the dense peak bloom of rare wild flowers." }
+                ]
+            },
+            "goechala": {
+                id: "goechala",
+                region: "sikkim",
+                regionName: "Sikkim",
+                title: "Goechala Kanchenjunga Trek",
+                badge: "10-Day Grand Himalayan Trail",
+                subtitle: "Witness the grand east face of Mount Kanchenjunga, the world's 3rd highest peak, from the high Goechala viewpoint.",
+                image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
+                duration: "10 Days Total",
+                altitude: "15,100 Ft",
+                distance: "90 KM",
+                difficulty: "Challenging",
+                estCost: "₹36,000 / person",
+                advisory: "<strong>High Endurance Trek:</strong> Requires strong physical stamina for long hiking days (up to 12 hours on summit view day) and high altitude gain.",
+                route: ["Yuksom", "Sachen", "Tshoka", "Dzongri", "Thansing", "Lamuney", "Goechala View Point (15,100 ft)", "Yuksom"],
+                highlights: [
+                    { title: "Close-up of Mt. Kanchenjunga", desc: "Sunrise reflection turning the colossal 8,586m massif into bright gold." },
+                    { title: "Rhododendron Forests", desc: "Trek through enchanting blooming red and pink canopies in spring." },
+                    { title: "Dzongri Top Sunrise", desc: "Panoramic view of 16 high Himalayan peaks from a single vantage point." }
+                ],
+                itinerary: [
+                    { day: "Day 1", route: "NJP/Bagdogra ➔ Yuksom", desc: "Drive to the historic first capital of Sikkim (5,700 ft).", cost: "₹1,500" },
+                    { day: "Day 2", route: "Yuksom ➔ Sachen", desc: "Trek through tropical forests and suspension bridges (7,200 ft).", cost: "Included" },
+                    { day: "Day 3", route: "Sachen ➔ Tshoka", desc: "Steep climb past Bakhim village to Tibetan settlement Tshoka (9,700 ft).", cost: "Included" },
+                    { day: "Day 4", route: "Tshoka ➔ Dzongri", desc: "Climb through rhododendron tunnels to open alpine ridge (12,980 ft).", cost: "Included" },
+                    { day: "Day 5", route: "Dzongri Acclimatization", desc: "Sunrise trek to Dzongri Top (13,680 ft) overlooking Kanchenjunga.", cost: "Included" },
+                    { day: "Day 6", route: "Dzongri ➔ Thansing", desc: "Descend to Kokchurang and walk through Prek Chu valley to Thansing.", cost: "Included" },
+                    { day: "Day 7", route: "Thansing ➔ Lamuney", desc: "Short trek to high base camp Lamuney (13,700 ft) before summit push.", cost: "Included" },
+                    { day: "Day 8", route: "Lamuney ➔ Goechala ➔ Kokchurang", desc: "3 AM push to Goechala View Point (15,100 ft); witness golden sunrise.", cost: "Included" },
+                    { day: "Day 9", route: "Kokchurang ➔ Tshoka ➔ Yuksom", desc: "Long return trek back through lush Sikkim forests.", cost: "Included" },
+                    { day: "Day 10", route: "Yuksom ➔ NJP / Bagdogra", desc: "Drive back to Bagdogra Airport / NJP Station.", cost: "₹1,500" }
+                ],
+                budgetRows: [
+                    { item: "Transit / Flight to Bagdogra", perPerson: "₹12,500", group: "₹75,000" },
+                    { item: "9-Day Goechala Licensed Expedition Package", perPerson: "₹18,500", group: "₹1,11,000" },
+                    { item: "Bagdogra ↔ Yuksom Transfers", perPerson: "₹3,000", group: "₹18,000" },
+                    { item: "Khangchendzonga Park Permit & Fees", perPerson: "₹2,000", group: "₹12,000" }
+                ],
+                totalPerPerson: "₹36,000",
+                features: ["Unrivaled views of Mt. Kanchenjunga", "UNESCO Biosphere Reserve trail", "Expert Sikkimese mountain crew"],
+                faqs: [
+                    { q: "What are the best months for Goechala?", a: "April-May for blooming rhododendrons, and October-November for crystal clear mountain visibility." }
+                ]
+            }
+        };
+
+        // Render Listing Grid
+        function renderTrekListing(filter = 'all') {
+            const container = document.getElementById('trekGridContainer');
+            container.innerHTML = '';
+
+            Object.values(treksData).forEach(trek => {
+                if (filter === 'all' || trek.region === filter) {
+                    const col = document.createElement('div');
+                    col.className = 'col-lg-4 col-md-6';
+                    col.innerHTML = `
+                        <div class="trek-card">
+                            <img src="${trek.image}" alt="${trek.title}">
+                            <div class="trek-card-body">
+                                <div>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-primary-subtle text-primary fw-semibold">${trek.regionName}</span>
+                                        <span class="badge bg-warning text-dark fw-bold">${trek.difficulty}</span>
+                                    </div>
+                                    <h5 class="fw-bold text-dark mb-1">${trek.title}</h5>
+                                    <p class="small text-muted mb-3">${trek.subtitle.substring(0, 95)}...</p>
+                                    
+                                    <div class="row g-1 text-center py-2 bg-light rounded-3 mb-3 border">
+                                        <div class="col-4 border-end">
+                                            <small class="text-muted d-block" style="font-size:0.75rem;">Altitude</small>
+                                            <span class="fw-bold text-dark small">${trek.altitude}</span>
+                                        </div>
+                                        <div class="col-4 border-end">
+                                            <small class="text-muted d-block" style="font-size:0.75rem;">Duration</small>
+                                            <span class="fw-bold text-dark small">${trek.duration.split(' ')[0]} Days</span>
+                                        </div>
+                                        <div class="col-4">
+                                            <small class="text-muted d-block" style="font-size:0.75rem;">Est. Cost</small>
+                                            <span class="fw-bold text-success small">${trek.estCost.split(' ')[0]}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-theme w-100 mt-2" onclick="loadTrekDetail('${trek.id}')">
+                                    <i class="fa-solid fa-compass me-1"></i> View Full Guide & Plan
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(col);
+                }
+            });
+        }
+
+        // Filter Function
+        function filterTreks(region) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderTrekListing(region);
+        }
+
+        // View Routing: Show Listing View
+        function showListingPage() {
+            document.getElementById('detailView').style.display = 'none';
+            document.getElementById('listingView').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // View Routing: Show Detail View for Selected Trek
+        function loadTrekDetail(trekId) {
+            const trek = treksData[trekId];
+            if (!trek) return;
+
+            // Update Modal hidden field
+            document.getElementById('modalTrekField').value = trek.title;
+
+            // Populate Hero
+            document.getElementById('detailBadge').innerText = trek.badge;
+            document.getElementById('detailTitle').innerText = trek.title;
+            document.getElementById('detailSubtitle').innerText = trek.subtitle;
+
+            // Populate Stats Ribbon
+            const statsRow = document.getElementById('detailStatsRow');
+            statsRow.innerHTML = `
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <i class="fa-solid fa-mountain"></i>
+                        <h5>${trek.altitude}</h5>
+                        <p>Max Elevation</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <i class="fa-solid fa-route"></i>
+                        <h5>${trek.distance}</h5>
+                        <p>Total Distance</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <i class="fa-solid fa-clock"></i>
+                        <h5>${trek.duration}</h5>
+                        <p>Expedition Span</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <i class="fa-solid fa-tag"></i>
+                        <h5>${trek.estCost}</h5>
+                        <p>Target Budget</p>
+                    </div>
+                </div>
+            `;
+
+            // Advisory
+            document.getElementById('detailAdvisory').innerHTML = `
+                <div class="d-flex align-items-start">
+                    <i class="fa-solid fa-triangle-exclamation text-warning fs-3 me-3 mt-1"></i>
+                    <div>
+                        <h6 class="fw-bold mb-1">Trail Guidance & Safety Brief</h6>
+                        <p class="mb-0 small text-secondary">${trek.advisory}</p>
+                    </div>
+                </div>
+            `;
+
+            // Route Steps
+            const routeContainer = document.getElementById('detailRouteSteps');
+            routeContainer.innerHTML = '';
+            const flexDiv = document.createElement('div');
+            flexDiv.className = 'd-flex flex-wrap align-items-center';
+            trek.route.forEach((stop, index) => {
+                const step = document.createElement('span');
+                step.className = 'route-step';
+                step.innerHTML = `${stop}`;
+                flexDiv.appendChild(step);
+                if (index < trek.route.length - 1) {
+                    const arrow = document.createElement('span');
+                    arrow.className = 'route-arrow';
+                    arrow.innerHTML = '➔';
+                    flexDiv.appendChild(arrow);
+                }
+            });
+            routeContainer.appendChild(flexDiv);
+
+            // Highlights
+            const highlightsRow = document.getElementById('detailHighlightsRow');
+            highlightsRow.innerHTML = '';
+            trek.highlights.forEach(h => {
+                const col = document.createElement('div');
+                col.className = 'col-md-4';
+                col.innerHTML = `
+                    <div class="border rounded-3 p-3 bg-light h-100">
+                        <h6 class="fw-bold text-primary"><i class="fa-solid fa-check text-success me-2"></i>${h.title}</h6>
+                        <p class="small text-muted mb-0">${h.desc}</p>
+                    </div>
+                `;
+                highlightsRow.appendChild(col);
+            });
+
+            // Itinerary
+            const itinBody = document.getElementById('detailItineraryBody');
+            itinBody.innerHTML = '';
+            trek.itinerary.forEach(it => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><span class="badge bg-primary">${it.day}</span></td>
+                    <td><strong>${it.route}</strong></td>
+                    <td class="small">${it.desc}</td>
+                    <td class="text-success fw-bold">${it.cost}</td>
+                `;
+                itinBody.appendChild(tr);
+            });
+
+            // Budget
+            const budgetBody = document.getElementById('detailBudgetBody');
+            budgetBody.innerHTML = '';
+            trek.budgetRows.forEach(b => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${b.item}</td>
+                    <td>${b.perPerson}</td>
+                    <td class="fw-semibold">${b.group}</td>
+                `;
+                budgetBody.appendChild(tr);
+            });
+            document.getElementById('detailBudgetPerPerson').innerText = trek.totalPerPerson;
+            const featuresList = document.getElementById('detailBudgetFeatures');
+            featuresList.innerHTML = '';
+            trek.features.forEach(f => {
+                featuresList.innerHTML += `<li class="mb-2"><i class="fa fa-check-circle me-2 text-warning"></i> ${f}</li>`;
+            });
+
+            // FAQs
+            const faqAcc = document.getElementById('detailFaqAccordion');
+            faqAcc.innerHTML = '';
+            trek.faqs.forEach((faq, i) => {
+                faqAcc.innerHTML += `
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button ${i !== 0 ? 'collapsed' : ''}" type="button" data-bs-toggle="collapse" data-bs-target="#dynFaq${i}">
+                                ${faq.q}
+                            </button>
+                        </h2>
+                        <div id="dynFaq${i}" class="accordion-collapse collapse ${i === 0 ? 'show' : ''}" data-bs-parent="#detailFaqAccordion">
+                            <div class="accordion-body small text-secondary">
+                                ${faq.a}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Switch view
+            document.getElementById('listingView').style.display = 'none';
+            document.getElementById('detailView').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // =========================================================================
+        // FLOATING ACTION BAR & SHARING FUNCTIONS
+        // =========================================================================
+
+        // Wishlist Toggle
+        function toggleWishlist() {
+            const btn = document.getElementById('wishlistBtn');
+            const icon = document.getElementById('wishlistIcon');
+            btn.classList.toggle('active');
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                showToast("Added to your Saved Treks wishlist!");
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+                showToast("Removed from wishlist.");
+            }
+        }
+
+        // Open Share Destination Options Modal
+        function openShareModal() {
+            const currentUrl = window.location.href;
+            const shareTitle = encodeURIComponent("Check out this Himalayan Trek Plan and Itinerary!");
+            const encodedUrl = encodeURIComponent(currentUrl);
+
+            // Populate URLs for platforms
+            document.getElementById('shareUrlInput').value = currentUrl;
+            document.getElementById('shareWaBtn').href = `https://api.whatsapp.com/send?text=${shareTitle}%20${encodedUrl}`;
+            document.getElementById('shareFbBtn').href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+            document.getElementById('shareTwBtn').href = `https://twitter.com/intent/tweet?text=${shareTitle}&url=${encodedUrl}`;
+            document.getElementById('shareTgBtn').href = `https://t.me/share/url?url=${encodedUrl}&text=${shareTitle}`;
+            document.getElementById('shareLiBtn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+            document.getElementById('shareEmBtn').href = `mailto:?subject=${shareTitle}&body=Check%20out%20this%20link:%20${encodedUrl}`;
+
+            // Show share picker modal
+            const shareModal = new bootstrap.Modal(document.getElementById('sharePickerModal'));
+            shareModal.show();
+        }
+
+        // Copy Link to Clipboard
+        function copyCurrentLink() {
+            const input = document.getElementById('shareUrlInput');
+            navigator.clipboard.writeText(input.value).then(() => {
+                showToast("Link successfully copied to clipboard!");
+            }).catch(() => {
+                input.select();
+                document.execCommand('copy');
+                showToast("Link copied!");
+            });
+        }
+
+        // Toast Helper
+        function showToast(msg) {
+            const toast = document.getElementById('shareToast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2600);
+        }
+
+        // Handle Inquiry Submission (Direct to WhatsApp + Email)
+        function handleFormSubmission(event) {
+            event.preventDefault();
+
+            // Form Values
+            const trek = document.getElementById('modalTrekField').value.trim();
+            const name = document.getElementById('modalFullName').value.trim();
+            const email = document.getElementById('modalEmail').value.trim();
+            const phone = document.getElementById('modalPhone').value.trim();
+            const trekkers = document.getElementById('modalTrekkers').value.trim();
+            const departure = document.getElementById('modalDepartureCity').value.trim() || 'Not specified';
+            const month = document.getElementById('modalMonth').value;
+            const notes = document.getElementById('modalNotes').value.trim() || 'None';
+
+            // 1. Send Email in background via FormSubmit API
+            const formData = new FormData();
+            formData.append('Selected Trek', trek);
+            formData.append('Full Name', name);
+            formData.append('Email', email);
+            formData.append('Phone/WhatsApp', phone);
+            formData.append('Number of Trekkers', trekkers);
+            formData.append('Departure City', departure);
+            formData.append('Travel Month', month);
+            formData.append('Notes/Requirements', notes);
+            formData.append('_subject', `New Trek Inquiry: ${trek} from ${name}`);
+            formData.append('_captcha', 'false');
+
+            fetch('https://formsubmit.co/ajax/parthmahakalkar14@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).catch(error => {
+                console.log('Background email dispatch triggered:', error);
+            });
+
+            // 2. Compose WhatsApp message text
+            const whatsappText = 
+`*NEW TREK EXPEDITION INQUIRY* 🏔️
+-----------------------------------
+*Trek:* ${trek}
+*Name:* ${name}
+*Phone:* ${phone}
+*Email:* ${email}
+*Group Size:* ${trekkers} Trekkers
+*Departure City:* ${departure}
+*Month of Travel:* ${month}
+*Special Notes:* ${notes}
+-----------------------------------
+_Sent via Himalayan Trails Online Portal_`;
+
+            // WhatsApp Direct URL to +91 9371040623
+            const targetPhone = "919371040623";
+            const encodedMessage = encodeURIComponent(whatsappText);
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetPhone}&text=${encodedMessage}`;
+
+            // Close modal
+            const modalEl = document.getElementById('quoteModal');
+            const modalInstance = bootstrap.Modal.getInstance(modalEl);
+            if (modalInstance) {
+                modalInstance.hide();
+            }
+
+            // Redirect / Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Initialize with default listing
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTrekListing('all');
+        });
+    </script>
+</body>
+</html>
